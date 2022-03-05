@@ -1,6 +1,3 @@
-import math
-
-
 def get_digits(n: int):
     return len(str(n))
 
@@ -26,6 +23,3 @@ def cuadrados_medios(semilla: int, num_deseados: int):
         nums.append(float(f"0.{x}"))
 
     print(f"Xo = {semilla}, D = {get_digits(semilla)}: {nums}")
-
-
-cuadrados_medios(8567, 5)
