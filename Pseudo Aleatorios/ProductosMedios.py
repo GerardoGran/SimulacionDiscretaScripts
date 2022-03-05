@@ -7,6 +7,7 @@ def extract_mid(n: int, d: int):
     remove = size - d   # Digits to remove
     if size % 2 == 1:
         str_num = f"0{n}"
+        remove += 1
     else:
         str_num = str(n)
 
@@ -16,8 +17,8 @@ def extract_mid(n: int, d: int):
 def productos_medios(semilla_1: int, semilla_2: int, num_deseados: int):
     nums = []
     factores = (semilla_1, semilla_2)
+    d = get_digits(factores[0])
     for i in range(num_deseados):
-        d = get_digits(factores[0])
         producto = factores[0] * factores[1]
         r = extract_mid(producto, d)
         nums.append(float(f"0.{r}"))

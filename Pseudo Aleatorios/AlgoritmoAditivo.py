@@ -17,7 +17,11 @@ def getNewX(XiMinusOne, XiMinusN, m):
 def r(x, m):
     return x / (m - 1)
 
+results = []
+
 for i in range(n, amount + n):
     newX = getNewX(arr[i - 1], arr[i - n], m)
     arr.append(newX)
-    print(r(newX, m))
+    results.append("%.4f" % r(newX, m))
+
+print(results)

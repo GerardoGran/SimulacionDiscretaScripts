@@ -13,8 +13,10 @@ def getX(x, a, c, m):
     return (x * a + c) % m
 
 newX = seed
-
+results = []
 while counter < n:
     newX = getX(newX, a, c, m)
-    print(r(newX, m))
+    results.append("%.4f" % r(newX, m))
     counter += 1
+
+print(results)
