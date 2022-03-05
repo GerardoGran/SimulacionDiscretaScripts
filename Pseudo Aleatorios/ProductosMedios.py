@@ -25,3 +25,11 @@ def productos_medios(semilla_1: int, semilla_2: int, num_deseados: int):
 
     print(
         f"Xo = {semilla_1}, x1 = {semilla_2}, D = {get_digits(semilla_1)}: {nums}")
+
+
+seed1 = int(input("Ingresa la semilla1: "))
+seed2 = int(input("Ingresa la semilla2: "))
+
+n = int(input("Ingresa la cantidad de numeros: "))
+
+productos_medios(seed1, seed2, n)

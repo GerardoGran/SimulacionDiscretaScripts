@@ -7,6 +7,7 @@ def extract_mid(n: int, d: int):
     remove = size - d   # Digits to remove
     if size % 2 == 1:
         str_num = f"0{n}"
+        remove += 1
     else:
         str_num = str(n)
 
@@ -23,3 +24,9 @@ def cuadrados_medios(semilla: int, num_deseados: int):
         nums.append(float(f"0.{x}"))
 
     print(f"Xo = {semilla}, D = {get_digits(semilla)}: {nums}")
+
+seed = int(input("Ingresa la semilla: "))
+
+n = int(input("Ingresa numeros deseados: "))
+
+cuadrados_medios(seed, n)
