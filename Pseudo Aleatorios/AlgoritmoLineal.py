@@ -1,22 +1,26 @@
-seed = int(input("Enter the seed: "))
-a = int(input("Enter a: "))
-c = int(input("Enter c: "))
-m = int(input("Enter m: "))
-n = int(input("Enter amount: "))
-
-counter = 0
-
-def r(xi, m):
+def r(xi: int, m: int):
     return xi / (m - 1)
 
-def getX(x, a, c, m):
+
+def getX(x: int, a: int, c: int, m: int):
     return (x * a + c) % m
 
-newX = seed
-results = []
-while counter < n:
-    newX = getX(newX, a, c, m)
-    results.append("%.4f" % r(newX, m))
-    counter += 1
 
-print(results)
+def algoritmo_lineal(seed: int, a: int, c: int, m: int, n: int):
+    nums = []
+    x = getX(seed, a, c, m)
+
+    for i in range(n):
+        nums.append(f"{r(x, m):.4f}")
+        x = getX(x, a, c, m)
+
+    print(f"xi+1 = ({a}xi + {c})mod({m}): {nums}")
+
+
+seed = int(input("Semilla (x0): "))
+a = int(input("Constante multiplicativa (a): "))
+c = int(input("Constante Aditiva (c): "))
+m = int(input("m: "))
+n = int(input("Cuantos Numeros: "))
+
+algoritmo_lineal(seed, a, c, m, n)
