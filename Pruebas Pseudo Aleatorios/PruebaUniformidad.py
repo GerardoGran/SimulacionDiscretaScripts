@@ -38,9 +38,9 @@ def prueba_uniformidad(nums, alpha):
         chisq += (10 - n) ** 2 / 10
 
     if chisq < 16.919:
-        print("Uniformidad: ACEPTA")
+        print("Uniformidad: ACEPTADA")
     else:
-        print("Uniformidad: RECHAZA")
+        print("Uniformidad: RECHAZADA")
 
 
 prueba_uniformidad(nums, 0.05)
