@@ -26,9 +26,12 @@ def prueba_varianza(nums, alpha):
     var = variance(nums)
     inf = lim_inf(alpha, len(nums))
     sup = lim_sup(alpha, len(nums))
-    print(f"V: {var}\nLi: {inf}, Ls: {sup}")
 
     if inf < var and var < sup:
         print("Varianza: ACEPTADA")
+        print(f"var: {var}\tLi: {inf}, Ls: {sup}\n")
+        return True
     else:
         print("Varianza: RECHAZADA")
+        print(f"var: {var}\tLi: {inf}, Ls: {sup}\n")
+        return False

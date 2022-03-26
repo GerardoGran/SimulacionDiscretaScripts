@@ -34,13 +34,22 @@ def prueba_uniformidad(nums, alpha):
 
     chisq = 0
 
-    for i, n in enumerate(frecuencias):
+    for n in frecuencias:
         chisq += (10 - n) ** 2 / 10
 
     if chisq < 16.919:
         print("Uniformidad: ACEPTADA")
+        for i, arr in enumerate(rangos):
+            print(
+                f"{i/10} - {(i+1)/10}: {len(arr)}\tchisq: {(10 - len(arr)) ** 2 / 10}"
+            )
+        print(f"\t\t suma: {chisq}")
+        return True
     else:
         print("Uniformidad: RECHAZADA")
-
-
-prueba_uniformidad(nums, 0.05)
+        for i, arr in enumerate(rangos):
+            print(
+                f"{i/10} - {(i+1)/10}: {len(arr)}\tchisq: {(10 - len(arr)) ** 2 / 10}"
+            )
+        print(f"\t\t suma: {chisq}")
+        return False
