@@ -34,9 +34,3 @@ def prueba_medias(nums: list) -> None:
         )
 
         return False
-
-
-# problem input here
-# input_list = []
-
-# prueba_medias(input_list)
