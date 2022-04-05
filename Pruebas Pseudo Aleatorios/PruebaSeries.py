@@ -1,4 +1,3 @@
-from functools import total_ordering
 from scipy.stats import chi2
 from tabulate import tabulate
 
@@ -51,9 +50,11 @@ def prueba_series(nums: list, alpha: float = 0.05) -> bool:
     print(tabulate(data, headers))
     print(f"La suma de chisq es {chisq_sum:.3f}")
 
-    if chi2.ppf(1 - alpha, 8) > chisq_sum:
-        print(f"{chi2.ppf(1-alpha, 8):.3f} > {chisq_sum:.3f}, se acepta")
+    chisq_compare = chi2.ppf(1 - alpha, 8)
+
+    if chisq_compare > chisq_sum:
+        print(f"{chisq_compare:.3f} > nuestro {chisq_sum:.3f}, se acepta")
         return True
     else:
-        print(f"{chi2.ppf(1-alpha, 8):.3f} < {chisq_sum:.3f}, se rechaza")
+        print(f"nuestro {chisq_sum:.3f} > {chisq_compare:.3f}, se rechaza")
         return False

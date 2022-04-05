@@ -2,6 +2,7 @@ from PruebasMedias import prueba_medias
 from PruebaUniformidad import prueba_uniformidad
 from PruebaVarianza import prueba_varianza
 from PruebaSeries import prueba_series
+from PruebaHuecos import prueba_huecos
 
 alpha = 0.05
 
@@ -115,4 +116,5 @@ nums2 = [
 # media = prueba_medias(nums)
 # varianza = prueba_varianza(nums, alpha)
 # uniformidad = prueba_uniformidad(nums, alpha)
-secuencia = prueba_series(nums1)
+# secuencia = prueba_series(nums1)
+secuencia = prueba_huecos(nums1, (0.6, 0.8))
